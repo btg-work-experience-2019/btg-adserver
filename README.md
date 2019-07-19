@@ -19,7 +19,35 @@ Remember: We _never_ create virtual environments in our _project_ directory!
 $ python3 -m venv <PATH_TO_DESIRED_LOCATION>
 ```
 
-2. Activate the virtual enironment
+2. Activate the virtual environment
 ```bash
 $ source <PATH_TO_VIRTUAL_ENV>/bin/activate
 ```
+
+
+### Creating a project
+
+1. Download Django by accessing the pip install from https://pypi.org/project/Django/
+
+2. Create a a new project. At this point you should be in your virtual environment.
+```bash
+$ django-admin startproject <NAME OF SITE>
+```
+
+3. Create a development server. Make sure you're in the sites directory.
+```bash
+$ python manage.py runserver
+```
+
+
+### Syncing database structure with the code from master
+
+1. Pull code from master using:
+```bash
+$ git pull <REMOTE> <BRANCH>
+```
+
+2. Merge codes together using:
+```bash
+ $ git merge <BRANCH>
+ ```
