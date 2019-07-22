@@ -25,29 +25,25 @@ $ source <PATH_TO_VIRTUAL_ENV>/bin/activate
 ```
 
 
-### Creating a project
+### Installing dependencies and running development server
 
-1. Download Django by accessing the pip install from https://pypi.org/project/Django/
+1. Download Django by accessing the pip install from https://pypi.org/project/Django/ and copy into terminal:
+'''bash
+pip install Django
+'''
 
 2. Create a a new project. At this point you should be in your virtual environment.
 ```bash
 $ django-admin startproject <NAME OF SITE>
 ```
 
-3. Create a development server. Make sure you're in the sites directory.
+3. Create a development server. Make sure you're in the project root.
 ```bash
 $ python manage.py runserver
 ```
 
 
-### Syncing database structure with the code from master
-
-1. Pull code from master using:
-```bash
-$ git pull <REMOTE> <BRANCH>
-```
-
-2. Merge codes together using:
-```bash
- $ git merge <BRANCH>
- ```
+### Commands to run after pulling code from master for syncing database
+'''bash
+$ python manage.py migrate
+'''
