@@ -57,3 +57,9 @@ Tutorial link:https://docs.djangoproject.com/en/2.2/intro/tutorial02/
 
 3. The URL for the site can be pulled from the terminal: http://<given IP address>/ and add admin to the end of it, to make the URL for the admin site.
 
+ ### In order to run a test
+ 
+ 1.create a virtual enviroment python3 -m venv ~/Desktop/workspace/test-env
+ 2. activate the virtual enviroment source ~/Desktop/workspace/test-env/bin/activate
+ 3. run the django command ./manage.py test
+ 
