@@ -19,4 +19,5 @@ class Banner(models.Model):
     active_banner = models.BooleanField(default=True)
     placements = models.ManyToManyField(Placement)
 
-    def count(self, )
+    def count(self):
+        return self.campaign_name
