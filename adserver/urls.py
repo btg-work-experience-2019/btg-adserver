@@ -18,6 +18,6 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('placement/', include('placement.urls')),
-    #/btg-adserver/placement/
+    path('placements/', include('display_ad_manager.urls')),
+    #/placements/
 ]
