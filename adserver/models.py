@@ -7,7 +7,7 @@ class Placement(models.Model):
     name = models.CharField(max_length=100)
 
     class Meta:
-        ordering = ('name',)
+        ordering = ('name')
 
     def __str__(self):
         return self.name
@@ -19,4 +19,5 @@ class Banner(models.Model):
     active_banner = models.BooleanField(default=True)
     placements = models.ManyToManyField(Placement)
 
-    def count(self, )
+    def __str__(self):
+        return self.campaign_name
