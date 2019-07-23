@@ -10,4 +10,4 @@ language: python # => 1
     before_script: # => 6
       - sqlite3 -e 'create database test;' -u root
     script: # => 7
-      - python manage.py test
+      - python manage.py test 
