@@ -8,3 +8,8 @@ class SimpleTest(unittest.TestCase):
         client = Client()
         response = client.get('/placements/')
         self.assertEqual(response.status_code, 200)
+
+        
+class BasicTest(unittest.TestCase):
+    def test_one_plus_one(self):
+        self.assertEqual(1+1, 2)
