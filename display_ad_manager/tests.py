@@ -21,7 +21,6 @@ class ConverterTest (unittest.TestCase):
         input = "hello world"
         output = converter(input)
         output_line_count = len(output.split('\n'))
-        print(output)
         self.assertEqual(output_line_count, 1)
 
     def test_multi_line_input_output_line_count(self):
@@ -40,3 +39,6 @@ class ConverterTest (unittest.TestCase):
         line_2 = "saklk"
         input = "%s\n%s" % (line_1, line_2)
         output = converter(input)
+        lines= output.split("\n")
+        self.assertEqual(lines[0], "document.write('%s');" % line_1)
+        self.assertEqual(lines[1], "document.write('%s');" % line_2)
