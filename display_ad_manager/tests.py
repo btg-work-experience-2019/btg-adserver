@@ -17,17 +17,26 @@ class BasicTest(unittest.TestCase):
 
 
 class ConverterTest (unittest.TestCase):
-    def test_new_line(self):
-        input= 'hsjkjh'
-        output= converter(input)
-        self.assertEqual(output, 'document.write(%s)' %input)
+    def test_single_line_input_output_line_count(self):
+        input = "hello world"
+        output = converter(input)
+        output_line_count = len(output.split('\n'))
+        print(output)
+        self.assertEqual(output_line_count, 1)
 
-    def test_add_line(self):
-        line1 = 'bjkds'
-        line2 = 'saklk'
+    def test_multi_line_input_output_line_count(self):
+        input = "hello\nworld"
+        output = converter(input)
+        output_line_count = len(output.split("\n"))
+        self.assertEqual(output_line_count, 2)
 
-        input= """bjkds
-saklk"""
-        output= converter(input)
-        self.assertEqual(output, """document.write(bjkds)
-        document.write(saklk)""")
+    def test_single_line_wrapping(self):
+        input = "hsjkjh"
+        output = converter(input)
+        self.assertEqual(output, "document.write('%s');" % input)
+
+    def test_multi_line_wrapping(self):
+        line_1 = "bjkd"
+        line_2 = "saklk"
+        input = "%s\n%s" % (line_1, line_2)
+        output = converter(input)
