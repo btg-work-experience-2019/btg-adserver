@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Placement, Banner
+
+admin.site.register(Placement)
+admin.site.register(Banner)

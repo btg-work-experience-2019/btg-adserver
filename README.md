@@ -63,3 +63,7 @@ Tutorial link:https://docs.djangoproject.com/en/2.2/intro/tutorial02/
  2. activate the virtual enviroment source ~/Desktop/workspace/test-env/bin/activate
  3. run the django command ./manage.py test
  
+
+
+
+[![Build Status](https://travis-ci.org/vzm-work-experience-2019/btg-adserver.svg?branch=master)](https://travis-ci.org/vzm-work-experience-2019/btg-adserver)
