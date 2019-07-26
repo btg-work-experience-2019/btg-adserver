@@ -33,7 +33,7 @@ class ConverterTest (unittest.TestCase):
     def test_single_line_wrapping(self):
         input = "hsjkjh"
         output = converter(input)
-        self.assertEqual(output, "document.write('%s');" % input)
+        self.assertEqual(output, 'document.write("%s");' % input)
 
     def test_multi_line_wrapping(self):
         line_1 = "bjkd"
@@ -41,5 +41,5 @@ class ConverterTest (unittest.TestCase):
         input = "%s\n%s" % (line_1, line_2)
         output = converter(input)
         lines= output.split("\n")
-        self.assertEqual(lines[0], "document.write('%s');" % line_1)
-        self.assertEqual(lines[1], "document.write('%s');" % line_2)
+        self.assertEqual(lines[0], 'document.write("%s");' % line_1)
+        self.assertEqual(lines[1], 'document.write("%s");' % line_2)
