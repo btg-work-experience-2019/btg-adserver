@@ -1,7 +1,8 @@
 from django.shortcuts import render
-
+from .utils import converter
 # Create your views here.
 from django.http import HttpResponse
+from display_ad_manager.models import Banner, Placement
 
 def placement(request, placement_id):
     placement = Placement.objects.get(pk=placement_id)
@@ -9,4 +10,4 @@ def placement(request, placement_id):
     impressions = display_banner.display_count
     display_banner.display_count = impressions + 1
     display_banner.save()
-    return HttpResponse(display_banner.banner_code)
+    return HttpResponse(converter(display_banner.banner_code), content_type = "text/javascript")
