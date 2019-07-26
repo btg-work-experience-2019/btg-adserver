@@ -1,20 +1,19 @@
 from django.contrib import admin
 from .models import Placement, Banner
-
+from django.template.loader import render_to_string
 from django import forms
 
-admin.site.register(Placement)
-admin.site.register(Banner)
-
+rendered = render_to_string('placement_template.html',{'placement_url': '10'})
 
 class PlacementForm(forms.ModelForm):
-    list_display = ('name')
+    tag = forms.CharField(initial = rendered)
 
     class Meta:
         model = Placement
-        exclude = ['name']
+        fields = '__all__'
 
 class PlacementAdmin(admin.ModelAdmin):
-    list_display = ('name')
-    exclude = ['name']
     form = PlacementForm
+
+admin.site.register(Placement, PlacementAdmin)
+admin.site.register(Banner)
